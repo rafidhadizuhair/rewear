@@ -933,80 +933,80 @@
 
     <!-- ================= JAVASCRIPT LOGIC ================= -->
     <script>
-                  // Inisialisasi Database Lokal jika belum ada
-                  const DEFAULT_PRODUCTS = [
-                    {
-                      id: 1,
-                      title: "Vintage Denim Jacket Levi's 90s",
-                      category: "Top",
-                      price: 349000,
-                      condition: "9/10 (Pudar alami)",
-                      size: "L",
-                      stock: 1,
-                      image:
-                        "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&auto=format&fit=crop&q=80",
-                      description:
-                        "Jaket denim klasik Levi's buatan USA era 90-an. Kancing lengkap, tanpa robekan, warna wash sangat aesthetic.",
-                    },
-                    {
-                      id: 2,
-                      title: "Nike Air Jordan 1 Retro High",
-                      category: "Sepatu",
-                      price: 1150000,
-                      condition: "8.5/10 (Good condition)",
-                      size: "EUR 42.5",
-                      stock: 1,
-                      image:
-                        "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=80",
-                      description:
-                        "Sneaker Jordan 1 Original. Outsole masih tebal, insole original, box pengganti.",
-                    },
-                    {
-                      id: 3,
-                      title: "Carhartt Crossbody Bag Vintage",
-                      category: "Tas",
-                      price: 240000,
-                      condition: "9.5/10 (Mulus)",
-                      size: "Free Size",
-                      stock: 2,
-                      image:
-                        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=80",
-                      description:
-                        "Tas selempang bahan canvas kuat Carhartt. Tahan banting, cocok untuk kuliah/hangout.",
-                    },
-                    {
-                      id: 4,
-                      title: "Kacamata Hitam Retro Oval 70s",
-                      category: "Aksesoris",
-                      price: 75000,
-                      condition: "Brand New Old Stock (NOS)",
-                      size: "All Size",
-                      stock: 3,
-                      image:
-                        "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&auto=format&fit=crop&q=80",
-                      description:
-                        "Kacamata frame oval retro tahun 70an stok lama. UV Protection 400.",
-                    },
-                  ];
+      // Inisialisasi Database Lokal jika belum ada
+      const DEFAULT_PRODUCTS = [
+        {
+          id: 1,
+          title: "Vintage Denim Jacket Levi's 90s",
+          category: "Top",
+          price: 349000,
+          condition: "9/10 (Pudar alami)",
+          size: "L",
+          stock: 1,
+          image:
+            "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&auto=format&fit=crop&q=80",
+          description:
+            "Jaket denim klasik Levi's buatan USA era 90-an. Kancing lengkap, tanpa robekan, warna wash sangat aesthetic.",
+        },
+        {
+          id: 2,
+          title: "Nike Air Jordan 1 Retro High",
+          category: "Sepatu",
+          price: 1150000,
+          condition: "8.5/10 (Good condition)",
+          size: "EUR 42.5",
+          stock: 1,
+          image:
+            "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600&auto=format&fit=crop&q=80",
+          description:
+            "Sneaker Jordan 1 Original. Outsole masih tebal, insole original, box pengganti.",
+        },
+        {
+          id: 3,
+          title: "Carhartt Crossbody Bag Vintage",
+          category: "Tas",
+          price: 240000,
+          condition: "9.5/10 (Mulus)",
+          size: "Free Size",
+          stock: 2,
+          image:
+            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=80",
+          description:
+            "Tas selempang bahan canvas kuat Carhartt. Tahan banting, cocok untuk kuliah/hangout.",
+        },
+        {
+          id: 4,
+          title: "Kacamata Hitam Retro Oval 70s",
+          category: "Aksesoris",
+          price: 75000,
+          condition: "Brand New Old Stock (NOS)",
+          size: "All Size",
+          stock: 3,
+          image:
+            "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&auto=format&fit=crop&q=80",
+          description:
+            "Kacamata frame oval retro tahun 70an stok lama. UV Protection 400.",
+        },
+      ];
 
-                  const DEFAULT_USERS = [
-                    {
-                      id: 1,
-                      name: "Admin Rewear",
-                      email: "admin@rewear.com",
-                      password: "admin",
-                      role: "admin",
-                      createdAt: new Date().toISOString(),
-                    },
-                    {
-                      id: 2,
-                      name: "Mahasiswa Keren",
-                      email: "user@rewear.com",
-                      password: "user",
-                      role: "user",
-                      createdAt: new Date().toISOString(),
-                    },
-                  ];
+      const DEFAULT_USERS = [
+        {
+          id: 1,
+          name: "Admin Rewear",
+          email: "admin@rewear.com",
+          password: "admin",
+          role: "admin",
+          createdAt: new Date().toISOString(),
+        },
+        {
+          id: 2,
+          name: "Mahasiswa Keren",
+          email: "user@rewear.com",
+          password: "user",
+          role: "user",
+          createdAt: new Date().toISOString(),
+        },
+      ];
 
       // Inisialisasi Database Lokal jika belum ada atau jika kosong
       const existingProducts = JSON.parse(localStorage.getItem("rw_products"));
@@ -1020,96 +1020,96 @@
       if (!localStorage.getItem("rw_orders"))
         localStorage.setItem("rw_orders", JSON.stringify([]));
 
-                  // Global App States
-                  let currentUser =
-                    JSON.parse(localStorage.getItem("rw_currentUser")) || null;
-                  let cart = JSON.parse(localStorage.getItem("rw_cart")) || [];
-                  let currentCategory = "Semua";
-                  let pendingOrder = null;
-                  let authMode = "login";
+      // Global App States
+      let currentUser =
+        JSON.parse(localStorage.getItem("rw_currentUser")) || null;
+      let cart = JSON.parse(localStorage.getItem("rw_cart")) || [];
+      let currentCategory = "Semua";
+      let pendingOrder = null;
+      let authMode = "login";
 
-                  // Helpers
-                  const formatRp = (num) =>
-                    new Intl.NumberFormat("id-ID", {
-                      style: "currency",
-                      currency: "IDR",
-                      maximumFractionDigits: 0,
-                    }).format(num);
+      // Helpers
+      const formatRp = (num) =>
+        new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          maximumFractionDigits: 0,
+        }).format(num);
 
-                  function initApp() {
-                    updateAuthUI();
-                    renderProducts();
-                    updateCartBadge();
-                    lucide.createIcons();
-                  }
+      function initApp() {
+        updateAuthUI();
+        renderProducts();
+        updateCartBadge();
+        lucide.createIcons();
+      }
 
-                  // Navigasi Antar Halaman
-                  function navigate(view) {
-                    document.getElementById("view-home").classList.add("hidden");
-                    document.getElementById("view-cart").classList.add("hidden");
-                    document.getElementById("view-orders").classList.add("hidden");
-                    document.getElementById("view-admin").classList.add("hidden");
-                    document.getElementById("view-contact").classList.add("hidden");
+      // Navigasi Antar Halaman
+      function navigate(view) {
+        document.getElementById("view-home").classList.add("hidden");
+        document.getElementById("view-cart").classList.add("hidden");
+        document.getElementById("view-orders").classList.add("hidden");
+        document.getElementById("view-admin").classList.add("hidden");
+        document.getElementById("view-contact").classList.add("hidden");
 
-                    if (view === "home") {
-                      document.getElementById("view-home").classList.remove("hidden");
-                      renderProducts();
-                    } else if (view === "contact") {
-                      document.getElementById("view-contact").classList.remove("hidden");
-                    } else if (view === "cart") {
-                      document.getElementById("view-cart").classList.remove("hidden");
-                      renderCart();
-                    } else if (view === "orders") {
-                      if (!currentUser) {
-                        openAuthModal("login");
-                        return;
-                      }
-                      document.getElementById("view-orders").classList.remove("hidden");
-                      renderOrders();
-                    } else if (view === "admin") {
-                      if (!currentUser || currentUser.role !== "admin") {
-                        alert("Hanya admin yang memiliki izin akses halaman ini!");
-                        navigate("home");
-                        return;
-                      }
-                      document.getElementById("view-admin").classList.remove("hidden");
-                      renderAdminDashboard();
-                    }
-                    lucide.createIcons();
-                  }
+        if (view === "home") {
+          document.getElementById("view-home").classList.remove("hidden");
+          renderProducts();
+        } else if (view === "contact") {
+          document.getElementById("view-contact").classList.remove("hidden");
+        } else if (view === "cart") {
+          document.getElementById("view-cart").classList.remove("hidden");
+          renderCart();
+        } else if (view === "orders") {
+          if (!currentUser) {
+            openAuthModal("login");
+            return;
+          }
+          document.getElementById("view-orders").classList.remove("hidden");
+          renderOrders();
+        } else if (view === "admin") {
+          if (!currentUser || currentUser.role !== "admin") {
+            alert("Hanya admin yang memiliki izin akses halaman ini!");
+            navigate("home");
+            return;
+          }
+          document.getElementById("view-admin").classList.remove("hidden");
+          renderAdminDashboard();
+        }
+        lucide.createIcons();
+      }
 
-                  function handleContactSubmit(e) {
-                    e.preventDefault();
-                    const name = document.getElementById("contact-name").value;
-                    alert(
-                      `Terima kasih ${name}, pesan Anda telah terkirim! Tim REWEAR akan menghubungi Anda segera.`,
-                    );
-                    e.target.reset();
-                    navigate("home");
-                  }
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById("contact-name").value;
+        alert(
+          `Terima kasih ${name}, pesan Anda telah terkirim! Tim REWEAR akan menghubungi Anda segera.`,
+        );
+        e.target.reset();
+        navigate("home");
+      }
 
-                  // ================= KATALOG PRODUK =================
-                  function renderProducts(query = "") {
-                    const products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    const grid = document.getElementById("product-grid");
+      // ================= KATALOG PRODUK =================
+      function renderProducts(query = "") {
+        const products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        const grid = document.getElementById("product-grid");
 
-                    let filtered = products.filter((p) => {
-                      const matchesCategory =
-                        currentCategory === "Semua" || p.category === currentCategory;
-                      const matchesQuery =
-                        p.title.toLowerCase().includes(query.toLowerCase()) ||
-                        p.description.toLowerCase().includes(query.toLowerCase());
-                      return matchesCategory && matchesQuery;
-                    });
+        let filtered = products.filter((p) => {
+          const matchesCategory =
+            currentCategory === "Semua" || p.category === currentCategory;
+          const matchesQuery =
+            p.title.toLowerCase().includes(query.toLowerCase()) ||
+            p.description.toLowerCase().includes(query.toLowerCase());
+          return matchesCategory && matchesQuery;
+        });
 
-                    if (filtered.length === 0) {
-                      grid.innerHTML = `<div class="col-span-full py-12 text-center text-gray-400">Tidak ada produk yang ditemukan.</div>`;
-                      return;
-                    }
+        if (filtered.length === 0) {
+          grid.innerHTML = `<div class="col-span-full py-12 text-center text-gray-400">Tidak ada produk yang ditemukan.</div>`;
+          return;
+        }
 
-                    grid.innerHTML = filtered
-                      .map(
-                        (p) => `
+        grid.innerHTML = filtered
+          .map(
+            (p) => `
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition flex flex-col justify-between group text-gray-800">
                       <div class="cursor-pointer" onclick="openProductDetail(${p.id})">
                         <div class="relative w-full h-48 bg-gray-100 overflow-hidden">
@@ -1129,114 +1129,114 @@
                       </div>
                     </div>
                   `,
-                      )
-                      .join("");
-                    lucide.createIcons();
-                  }
+          )
+          .join("");
+        lucide.createIcons();
+      }
 
-                  function filterCategory(cat) {
-                    currentCategory = cat;
-                    document.querySelectorAll(".cat-btn").forEach((btn) => {
-                      if (btn.dataset.cat === cat) {
-                        btn.classList.add("bg-black", "text-white");
-                        btn.classList.remove("border-gray-200", "text-gray-800");
-                      } else {
-                        btn.classList.remove("bg-black", "text-white");
-                        btn.classList.add("border-gray-200", "text-gray-800");
-                      }
-                    });
-                    renderProducts(document.getElementById("search-input").value);
-                  }
+      function filterCategory(cat) {
+        currentCategory = cat;
+        document.querySelectorAll(".cat-btn").forEach((btn) => {
+          if (btn.dataset.cat === cat) {
+            btn.classList.add("bg-black", "text-white");
+            btn.classList.remove("border-gray-200", "text-gray-800");
+          } else {
+            btn.classList.remove("bg-black", "text-white");
+            btn.classList.add("border-gray-200", "text-gray-800");
+          }
+        });
+        renderProducts(document.getElementById("search-input").value);
+      }
 
-                  function searchProducts() {
-                    const q = document.getElementById("search-input").value;
-                    renderProducts(q);
-                  }
+      function searchProducts() {
+        const q = document.getElementById("search-input").value;
+        renderProducts(q);
+      }
 
-                  function openProductDetail(id) {
-                    const products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    const prod = products.find((p) => p.id === id);
-                    if (!prod) return;
+      function openProductDetail(id) {
+        const products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        const prod = products.find((p) => p.id === id);
+        if (!prod) return;
 
-                    document.getElementById("detail-img").src = prod.image;
-                    document.getElementById("detail-category").innerText = prod.category;
-                    document.getElementById("detail-name").innerText = prod.title;
-                    document.getElementById("detail-price").innerText = formatRp(
-                      prod.price,
-                    );
-                    document.getElementById("detail-condition").innerText = prod.condition;
-                    document.getElementById("detail-size").innerText = prod.size;
-                    document.getElementById("detail-stock").innerText = prod.stock + " pcs";
-                    document.getElementById("detail-desc").innerText = prod.description;
+        document.getElementById("detail-img").src = prod.image;
+        document.getElementById("detail-category").innerText = prod.category;
+        document.getElementById("detail-name").innerText = prod.title;
+        document.getElementById("detail-price").innerText = formatRp(
+          prod.price,
+        );
+        document.getElementById("detail-condition").innerText = prod.condition;
+        document.getElementById("detail-size").innerText = prod.size;
+        document.getElementById("detail-stock").innerText = prod.stock + " pcs";
+        document.getElementById("detail-desc").innerText = prod.description;
 
-                    const btn = document.getElementById("add-to-cart-btn");
-                    btn.onclick = () => {
-                      addToCart(prod.id);
-                      closeProductModal();
-                    };
+        const btn = document.getElementById("add-to-cart-btn");
+        btn.onclick = () => {
+          addToCart(prod.id);
+          closeProductModal();
+        };
 
-                    document.getElementById("product-modal").classList.remove("hidden");
-                    lucide.createIcons();
-                  }
+        document.getElementById("product-modal").classList.remove("hidden");
+        lucide.createIcons();
+      }
 
-                  function closeProductModal() {
-                    document.getElementById("product-modal").classList.add("hidden");
-                  }
+      function closeProductModal() {
+        document.getElementById("product-modal").classList.add("hidden");
+      }
 
-                  // ================= KERANJANG BELANJA =================
-                  function addToCart(productId) {
-                    const products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    const item = products.find((p) => p.id === productId);
-                    if (!item) return;
+      // ================= KERANJANG BELANJA =================
+      function addToCart(productId) {
+        const products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        const item = products.find((p) => p.id === productId);
+        if (!item) return;
 
-                    if (item.stock <= 0) {
-                      alert("Maaf, produk ini sudah habis!");
-                      return;
-                    }
+        if (item.stock <= 0) {
+          alert("Maaf, produk ini sudah habis!");
+          return;
+        }
 
-                    const existing = cart.find((c) => c.id === productId);
-                    if (existing) {
-                      if (existing.qty < item.stock) {
-                        existing.qty += 1;
-                      } else {
-                        alert("Jumlah sudah mencapai batas stok preloved yang tersedia.");
-                        return;
-                      }
-                    } else {
-                      cart.push({ ...item, qty: 1 });
-                    }
+        const existing = cart.find((c) => c.id === productId);
+        if (existing) {
+          if (existing.qty < item.stock) {
+            existing.qty += 1;
+          } else {
+            alert("Jumlah sudah mencapai batas stok preloved yang tersedia.");
+            return;
+          }
+        } else {
+          cart.push({ ...item, qty: 1 });
+        }
 
-                    localStorage.setItem("rw_cart", JSON.stringify(cart));
-                    updateCartBadge();
-                    alert(`"${item.title}" berhasil dimasukkan ke keranjang!`);
-                  }
+        localStorage.setItem("rw_cart", JSON.stringify(cart));
+        updateCartBadge();
+        alert(`"${item.title}" berhasil dimasukkan ke keranjang!`);
+      }
 
-                  function updateCartBadge() {
-                    const totalItems = cart.reduce((acc, c) => acc + c.qty, 0);
-                    document.getElementById("cart-badge").innerText = totalItems;
-                  }
+      function updateCartBadge() {
+        const totalItems = cart.reduce((acc, c) => acc + c.qty, 0);
+        document.getElementById("cart-badge").innerText = totalItems;
+      }
 
-                  function renderCart() {
-                    const container = document.getElementById("cart-items-container");
-                    if (cart.length === 0) {
-                      container.innerHTML = `
+      function renderCart() {
+        const container = document.getElementById("cart-items-container");
+        if (cart.length === 0) {
+          container.innerHTML = `
                       <div class="bg-white text-gray-800 p-12 rounded-3xl border border-gray-100 text-center space-y-3">
                         <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto text-gray-300"></i>
                         <h3 class="font-bold text-gray-800">Keranjang Masih Kosong</h3>
                         <p class="text-xs text-gray-400">Temukan fashion preloved berkualitas impianmu sekarang.</p>
                       </div>
                     `;
-                      document.getElementById("cart-subtotal").innerText = formatRp(0);
-                      document.getElementById("cart-total").innerText = formatRp(0);
-                      lucide.createIcons();
-                      return;
-                    }
+          document.getElementById("cart-subtotal").innerText = formatRp(0);
+          document.getElementById("cart-total").innerText = formatRp(0);
+          lucide.createIcons();
+          return;
+        }
 
-                    let subtotal = 0;
-                    container.innerHTML = cart
-                      .map((item, idx) => {
-                        subtotal += item.price * item.qty;
-                        return `
+        let subtotal = 0;
+        container.innerHTML = cart
+          .map((item, idx) => {
+            subtotal += item.price * item.qty;
+            return `
                       <div class="bg-white text-gray-800 p-4 rounded-2xl border border-gray-100 flex items-center justify-between gap-4">
                         <div class="flex items-center gap-4">
                           <img src="${item.image}" class="w-16 h-16 rounded-xl object-cover bg-gray-100">
@@ -1253,175 +1253,152 @@
                         </button>
                       </div>
                     `;
-                      })
-                      .join("");
+          })
+          .join("");
 
-                    document.getElementById("cart-subtotal").innerText = formatRp(subtotal);
-                    document.getElementById("cart-total").innerText = formatRp(subtotal);
-                    lucide.createIcons();
-                  }
+        document.getElementById("cart-subtotal").innerText = formatRp(subtotal);
+        document.getElementById("cart-total").innerText = formatRp(subtotal);
+        lucide.createIcons();
+      }
 
-                  function removeFromCart(index) {
-                    cart.splice(index, 1);
-                    localStorage.setItem("rw_cart", JSON.stringify(cart));
-                    updateCartBadge();
-                    renderCart();
-                  }
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("rw_cart", JSON.stringify(cart));
+        updateCartBadge();
+        renderCart();
+      }
 
-                  // ================= MIDTRANS INTEGRATION CHECKOUT =================
-                  async function startCheckout() {
-              if (!currentUser) {
-                alert("Silakan Masuk atau Registrasi terlebih dahulu untuk checkout.");
-                openAuthModal("login");
-                return;
-              }
+      // ================= MIDTRANS INTEGRATION CHECKOUT =================
+      // ================= MIDTRANS INTEGRATION CHECKOUT =================
+      async function startCheckout() {
+        if (!currentUser) {
+          alert(
+            "Silakan Masuk atau Registrasi terlebih dahulu untuk checkout.",
+          );
+          openAuthModal("login");
+          return;
+        }
 
-              if (cart.length === 0) {
-                alert("Keranjang masih kosong.");
-                return;
-              }
+        if (cart.length === 0) {
+          alert("Keranjang masih kosong.");
+          return;
+        }
 
-              const total = cart.reduce((acc, c) => acc + c.price * c.qty, 0);
-              const orderId = "ORD-" + Math.floor(100000 + Math.random() * 900000);
+        const total = cart.reduce((acc, c) => acc + c.price * c.qty, 0);
+        const orderId = "ORD-" + Math.floor(100000 + Math.random() * 900000);
 
-              pendingOrder = {
-                id: orderId,
-                userId: currentUser.id,
-                userName: currentUser.name,
-                userEmail: currentUser.email,
-                items: [...cart],
-                totalAmount: total,
-                status: "Menunggu Pembayaran",
-                createdAt: new Date().toISOString(),
-              };
+        pendingOrder = {
+          id: orderId,
+          userId: currentUser.id,
+          userName: currentUser.name,
+          userEmail: currentUser.email,
+          items: [...cart],
+          totalAmount: total,
+          status: "Menunggu Pembayaran",
+          createdAt: new Date().toISOString(),
+        };
 
-              try {
-                // GANTI URL INI DENGAN URL BACKEND RENDER KAMU SETELAH DEPLOY DI LANGKAH 6
-                const BACKEND_URL = "https://rewearbackend-v2th.vercel.app/"; // Contoh URL Render
+        try {
+          const BACKEND_URL = "https://rewearbackend-v2th.vercel.app";
 
-                const response = await fetch(`${BACKEND_URL}/api/create-snap-token`, {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
-                    orderId: pendingOrder.id,
-                    amount: pendingOrder.totalAmount,
-                    customerName: pendingOrder.userName,
-                    customerEmail: pendingOrder.userEmail,
-                    items: pendingOrder.items,
-                  }),
-                });
+          const response = await fetch(`${BACKEND_URL}/api/create-snap-token`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              orderId: pendingOrder.id,
+              amount: pendingOrder.totalAmount,
+              customerName: pendingOrder.userName,
+              customerEmail: pendingOrder.userEmail,
+              items: pendingOrder.items,
+            }),
+          });
 
-                const data = await response.json();
+          const data = await response.json();
 
-                if (!data.token) {
-                  alert("Gagal mendapatkan token transaksi dari Midtrans.");
-                  return;
-                }
+          if (!data.token) {
+            alert("Gagal mendapatkan token transaksi dari Midtrans.");
+            return;
+          }
 
-                window.snap.pay(data.token, {
-                  onSuccess: function (result) {
-                    alert("🎉 Pembayaran Berhasil!");
-                    processSuccessfulOrder(result.payment_type);
-                  },
-                  onPending: function (result) {
-                    alert("Pembayaran Anda sedang diproses/menunggu transfer.");
-                    saveOrderToHistory("Menunggu Pembayaran", result.payment_type);
-                  },
-                  onError: function (result) {
-                    alert("Pembayaran Gagal atau Dibatalkan!");
-                  },
-                  onClose: function () {
-                    alert("Anda menutup halaman pembayaran sebelum selesai.");
-                  },
-                });
-              } catch (error) {
-                console.error("Checkout Error:", error);
-                alert("Gagal terhubung ke server backend payment gateway.");
-              }
-            }
+          window.snap.pay(data.token, {
+            onSuccess: function (result) {
+              alert("🎉 Pembayaran Berhasil!");
+              processSuccessfulOrder(result.payment_type);
+            },
+            onPending: function (result) {
+              alert("Pembayaran Anda sedang diproses/menunggu transfer.");
+              saveOrderToHistory("Menunggu Pembayaran", result.payment_type);
+            },
+            onError: function (result) {
+              alert("Pembayaran Gagal atau Dibatalkan!");
+            },
+            onClose: function () {
+              alert("Anda menutup halaman pembayaran sebelum selesai.");
+            },
+          });
+        } catch (error) {
+          console.error("Checkout Error:", error);
+          alert("Gagal terhubung ke server backend payment gateway.");
+        }
+      }
 
-                      window.snap.pay(data.token, {
-                        onSuccess: function (result) {
-                          alert("🎉 Pembayaran Berhasil!");
-                          processSuccessfulOrder(result.payment_type);
-                        },
-                        onPending: function (result) {
-                          alert("Pembayaran Anda sedang diproses/menunggu transfer.");
-                          saveOrderToHistory("Menunggu Pembayaran", result.payment_type);
-                        },
-                        onError: function (result) {
-                          alert("Pembayaran Gagal atau Dibatalkan!");
-                        },
-                        onClose: function () {
-                          alert("Anda menutup halaman pembayaran sebelum selesai.");
-                        },
-                      });
-                    } catch (error) {
-                      console.error("Checkout Error:", error);
-                      alert(
-                        "Gagal terhubung ke server backend (Pastikan CMD node server.js tetap terbuka).",
-                      );
-                    }
-                  }
+      function processSuccessfulOrder(paymentMethod) {
+        if (!pendingOrder) return;
 
-                  function processSuccessfulOrder(paymentMethod) {
-                    if (!pendingOrder) return;
+        pendingOrder.paymentMethod = paymentMethod || "Midtrans Snap";
+        pendingOrder.status = "Sudah Dibayar (Lunas)";
 
-                    pendingOrder.paymentMethod = paymentMethod || "Midtrans Snap";
-                    pendingOrder.status = "Sudah Dibayar (Lunas)";
+        let products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        pendingOrder.items.forEach((cartItem) => {
+          const prod = products.find((p) => p.id === cartItem.id);
+          if (prod) {
+            prod.stock = Math.max(0, prod.stock - cartItem.qty);
+          }
+        });
+        localStorage.setItem("rw_products", JSON.stringify(products));
 
-                    let products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    pendingOrder.items.forEach((cartItem) => {
-                      const prod = products.find((p) => p.id === cartItem.id);
-                      if (prod) {
-                        prod.stock = Math.max(0, prod.stock - cartItem.qty);
-                      }
-                    });
-                    localStorage.setItem("rw_products", JSON.stringify(products));
+        const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        orders.unshift(pendingOrder);
+        localStorage.setItem("rw_orders", JSON.stringify(orders));
 
-                    const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
-                    orders.unshift(pendingOrder);
-                    localStorage.setItem("rw_orders", JSON.stringify(orders));
+        cart = [];
+        localStorage.setItem("rw_cart", JSON.stringify(cart));
+        updateCartBadge();
 
-                    cart = [];
-                    localStorage.setItem("rw_cart", JSON.stringify(cart));
-                    updateCartBadge();
+        pendingOrder = null;
+        navigate("orders");
+      }
+      function saveOrderToHistory(status, paymentMethod) {
+        if (!pendingOrder) return;
+        pendingOrder.status = status;
+        pendingOrder.paymentMethod = paymentMethod || "Midtrans Snap";
 
-                    pendingOrder = null;
-                    navigate("orders");
-                  }
+        const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        orders.unshift(pendingOrder);
+        localStorage.setItem("rw_orders", JSON.stringify(orders));
 
-                  function saveOrderToHistory(status, paymentMethod) {
-                    if (!pendingOrder) return;
-                    pendingOrder.status = status;
-                    pendingOrder.paymentMethod = paymentMethod || "Midtrans Snap";
+        cart = [];
+        localStorage.setItem("rw_cart", JSON.stringify(cart));
+        updateCartBadge();
 
-                    const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
-                    orders.unshift(pendingOrder);
-                    localStorage.setItem("rw_orders", JSON.stringify(orders));
+        pendingOrder = null;
+        navigate("orders");
+      }
 
-                    cart = [];
-                    localStorage.setItem("rw_cart", JSON.stringify(cart));
-                    updateCartBadge();
+      // ================= RIWAYAT PESANAN =================
+      function renderOrders() {
+        const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        const userOrders = orders.filter((o) => o.userId === currentUser.id);
+        const container = document.getElementById("user-orders-list");
 
-                    pendingOrder = null;
-                    navigate("orders");
-                  }
+        if (userOrders.length === 0) {
+          container.innerHTML = `<div class="bg-white p-8 rounded-2xl border text-center text-sm text-gray-400">Belum ada riwayat pesanan.</div>`;
+          return;
+        }
 
-                  // ================= RIWAYAT PESANAN =================
-                  function renderOrders() {
-                    const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
-                    const userOrders = orders.filter((o) => o.userId === currentUser.id);
-                    const container = document.getElementById("user-orders-list");
-
-                    if (userOrders.length === 0) {
-                      container.innerHTML = `<div class="bg-white p-8 rounded-2xl border text-center text-sm text-gray-400">Belum ada riwayat pesanan.</div>`;
-                      return;
-                    }
-
-                    container.innerHTML = userOrders
-                      .map(
-                        (o) => `
+        container.innerHTML = userOrders
+          .map(
+            (o) => `
                     <div class="bg-white text-gray-800 p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
                       <div class="flex flex-col sm:flex-row justify-between sm:items-center pb-3 border-b gap-2">
                         <div>
@@ -1457,23 +1434,23 @@
                       </div>
                     </div>
                   `,
-                      )
-                      .join("");
-                    lucide.createIcons();
-                  }
+          )
+          .join("");
+        lucide.createIcons();
+      }
 
-                  function printInvoice(orderId) {
-                    const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
-                    const order = orders.find((o) => o.id === orderId);
-                    if (!order) {
-                      alert("Pesanan tidak ditemukan.");
-                      return;
-                    }
+      function printInvoice(orderId) {
+        const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        const order = orders.find((o) => o.id === orderId);
+        if (!order) {
+          alert("Pesanan tidak ditemukan.");
+          return;
+        }
 
-                    const invoiceWindow = window.open("", "_blank", "width=800,height=900");
-                    const itemsHtml = order.items
-                      .map(
-                        (item) => `
+        const invoiceWindow = window.open("", "_blank", "width=800,height=900");
+        const itemsHtml = order.items
+          .map(
+            (item) => `
                       <tr>
                         <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.title}</td>
                         <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">${item.size || "-"}</td>
@@ -1482,10 +1459,10 @@
                         <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right;">${formatRp(item.price * item.qty)}</td>
                       </tr>
                     `,
-                      )
-                      .join("");
+          )
+          .join("");
 
-                    const invoiceContent = `
+        const invoiceContent = `
                       <!DOCTYPE html>
                       <html>
                       <head>
@@ -1563,82 +1540,82 @@
                       </html>
                     `;
 
-                    invoiceWindow.document.write(invoiceContent);
-                    invoiceWindow.document.close();
-                  }
+        invoiceWindow.document.write(invoiceContent);
+        invoiceWindow.document.close();
+      }
 
-                  // ================= ADMIN PANEL & FILTER PENDAPATAN =================
-                  function filterRevenueByDate() {
-                    const selectedDate = document.getElementById(
-                      "revenue-date-picker",
-                    ).value; // Format: YYYY-MM-DD
-                    if (!selectedDate) return;
+      // ================= ADMIN PANEL & FILTER PENDAPATAN =================
+      function filterRevenueByDate() {
+        const selectedDate = document.getElementById(
+          "revenue-date-picker",
+        ).value; // Format: YYYY-MM-DD
+        if (!selectedDate) return;
 
-                    const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
 
-                    const filteredRevenue = orders
-                      .filter((o) => {
-                        if (!o.status || !o.status.includes("Lunas")) return false;
+        const filteredRevenue = orders
+          .filter((o) => {
+            if (!o.status || !o.status.includes("Lunas")) return false;
 
-                        let orderDateString = "";
-                        if (o.createdAt) {
-                          const d = new Date(o.createdAt);
-                          if (!isNaN(d.getTime())) {
-                            const year = d.getFullYear();
-                            const month = String(d.getMonth() + 1).padStart(2, "0");
-                            const day = String(d.getDate()).padStart(2, "0");
-                            orderDateString = `${year}-${month}-${day}`;
-                          }
-                        }
+            let orderDateString = "";
+            if (o.createdAt) {
+              const d = new Date(o.createdAt);
+              if (!isNaN(d.getTime())) {
+                const year = d.getFullYear();
+                const month = String(d.getMonth() + 1).padStart(2, "0");
+                const day = String(d.getDate()).padStart(2, "0");
+                orderDateString = `${year}-${month}-${day}`;
+              }
+            }
 
-                        return orderDateString === selectedDate;
-                      })
-                      .reduce((acc, o) => acc + Number(o.totalAmount || 0), 0);
+            return orderDateString === selectedDate;
+          })
+          .reduce((acc, o) => acc + Number(o.totalAmount || 0), 0);
 
-                    document.getElementById("admin-stat-revenue").innerText =
-                      formatRp(filteredRevenue);
+        document.getElementById("admin-stat-revenue").innerText =
+          formatRp(filteredRevenue);
 
-                    const parts = selectedDate.split("-");
-                    if (parts.length === 3) {
-                      document.getElementById("revenue-filter-label").innerText =
-                        `Pendapatan: ${parts[2]}/${parts[1]}/${parts[0]}`;
-                    }
-                  }
+        const parts = selectedDate.split("-");
+        if (parts.length === 3) {
+          document.getElementById("revenue-filter-label").innerText =
+            `Pendapatan: ${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+      }
 
-                  function resetRevenueFilter() {
-                    const picker = document.getElementById("revenue-date-picker");
-                    if (picker) picker.value = "";
+      function resetRevenueFilter() {
+        const picker = document.getElementById("revenue-date-picker");
+        if (picker) picker.value = "";
 
-                    const label = document.getElementById("revenue-filter-label");
-                    if (label) label.innerText = "Total Semua Waktu";
+        const label = document.getElementById("revenue-filter-label");
+        if (label) label.innerText = "Total Semua Waktu";
 
-                    renderAdminDashboard();
-                  }
+        renderAdminDashboard();
+      }
 
-                  function renderAdminDashboard() {
-                    const products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
-                    const users = JSON.parse(localStorage.getItem("rw_users")) || [];
+      function renderAdminDashboard() {
+        const products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        const orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        const users = JSON.parse(localStorage.getItem("rw_users")) || [];
 
-                    const totalRev = orders
-                      .filter((o) => o.status && o.status.includes("Lunas"))
-                      .reduce((acc, o) => acc + Number(o.totalAmount || 0), 0);
+        const totalRev = orders
+          .filter((o) => o.status && o.status.includes("Lunas"))
+          .reduce((acc, o) => acc + Number(o.totalAmount || 0), 0);
 
-                    document.getElementById("admin-stat-revenue").innerText =
-                      formatRp(totalRev);
-                    document.getElementById("admin-stat-orders").innerText = orders.length;
-                    document.getElementById("admin-stat-products").innerText =
-                      products.length;
+        document.getElementById("admin-stat-revenue").innerText =
+          formatRp(totalRev);
+        document.getElementById("admin-stat-orders").innerText = orders.length;
+        document.getElementById("admin-stat-products").innerText =
+          products.length;
 
-                    // Render Tabel Produk
-                    const productRows = document.getElementById("admin-product-rows");
-                    if (productRows) {
-                      if (products.length === 0) {
-                        productRows.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-gray-400">Belum ada produk.</td></tr>`;
-                      } else {
-                        productRows.innerHTML = products
-                          .map(
-                            (p) => `
+        // Render Tabel Produk
+        const productRows = document.getElementById("admin-product-rows");
+        if (productRows) {
+          if (products.length === 0) {
+            productRows.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-gray-400">Belum ada produk.</td></tr>`;
+          } else {
+            productRows.innerHTML = products
+              .map(
+                (p) => `
                           <tr class="hover:bg-gray-50 border-b border-gray-100">
                             <td class="p-4 flex items-center gap-3">
                               <img src="${p.image}" class="w-10 h-10 rounded-lg object-cover bg-gray-100">
@@ -1653,20 +1630,20 @@
                             </td>
                           </tr>
                         `,
-                          )
-                          .join("");
-                      }
-                    }
+              )
+              .join("");
+          }
+        }
 
-                    // Render Tabel Pesanan
-                    const orderRows = document.getElementById("admin-order-rows");
-                    if (orderRows) {
-                      if (orders.length === 0) {
-                        orderRows.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-gray-400">Belum ada pesanan.</td></tr>`;
-                      } else {
-                        orderRows.innerHTML = orders
-                          .map(
-                            (o) => `
+        // Render Tabel Pesanan
+        const orderRows = document.getElementById("admin-order-rows");
+        if (orderRows) {
+          if (orders.length === 0) {
+            orderRows.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-gray-400">Belum ada pesanan.</td></tr>`;
+          } else {
+            orderRows.innerHTML = orders
+              .map(
+                (o) => `
                           <tr class="hover:bg-gray-50 border-b border-gray-100">
                             <td class="p-4 font-mono font-bold text-gray-900">#${o.id}</td>
                             <td class="p-4 text-gray-700">${o.userName || "Guest"}</td>
@@ -1691,20 +1668,20 @@
                             </td>
                           </tr>
                         `,
-                          )
-                          .join("");
-                      }
-                    }
+              )
+              .join("");
+          }
+        }
 
-                    // Render Tabel User
-                    const userRows = document.getElementById("admin-user-rows");
-                    if (userRows) {
-                      if (users.length === 0) {
-                        userRows.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-gray-400">Belum ada user.</td></tr>`;
-                      } else {
-                        userRows.innerHTML = users
-                          .map(
-                            (u) => `
+        // Render Tabel User
+        const userRows = document.getElementById("admin-user-rows");
+        if (userRows) {
+          if (users.length === 0) {
+            userRows.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-gray-400">Belum ada user.</td></tr>`;
+          } else {
+            userRows.innerHTML = users
+              .map(
+                (u) => `
                           <tr class="hover:bg-gray-50 border-b border-gray-100">
                             <td class="p-4 font-bold text-gray-900">${u.name}</td>
                             <td class="p-4 text-gray-600">${u.email}</td>
@@ -1725,252 +1702,252 @@
                             </td>
                           </tr>
                         `,
-                          )
-                          .join("");
-                      }
-                    }
-                  }
+              )
+              .join("");
+          }
+        }
+      }
 
-                  function switchAdminTab(tab) {
-                    ["products", "orders", "users"].forEach((t) => {
-                      document.getElementById(`admin-sec-${t}`).classList.add("hidden");
-                      const btn = document.getElementById(`admin-tab-${t}-btn`);
-                      btn.classList.remove("border-white", "text-white");
-                      btn.classList.add("border-transparent", "text-gray-400");
-                    });
+      function switchAdminTab(tab) {
+        ["products", "orders", "users"].forEach((t) => {
+          document.getElementById(`admin-sec-${t}`).classList.add("hidden");
+          const btn = document.getElementById(`admin-tab-${t}-btn`);
+          btn.classList.remove("border-white", "text-white");
+          btn.classList.add("border-transparent", "text-gray-400");
+        });
 
-                    document.getElementById(`admin-sec-${tab}`).classList.remove("hidden");
-                    const activeBtn = document.getElementById(`admin-tab-${tab}-btn`);
-                    activeBtn.classList.remove("border-transparent", "text-gray-400");
-                    activeBtn.classList.add("border-white", "text-white");
-                  }
+        document.getElementById(`admin-sec-${tab}`).classList.remove("hidden");
+        const activeBtn = document.getElementById(`admin-tab-${tab}-btn`);
+        activeBtn.classList.remove("border-transparent", "text-gray-400");
+        activeBtn.classList.add("border-white", "text-white");
+      }
 
-                  function openProductFormModal() {
-                    document.getElementById("crud-id").value = "";
-                    document.getElementById("product-crud-form").reset();
-                    document.getElementById("product-form-title").innerText =
-                      "Tambah Produk Baru";
-                    document
-                      .getElementById("product-form-modal")
-                      .classList.remove("hidden");
-                  }
+      function openProductFormModal() {
+        document.getElementById("crud-id").value = "";
+        document.getElementById("product-crud-form").reset();
+        document.getElementById("product-form-title").innerText =
+          "Tambah Produk Baru";
+        document
+          .getElementById("product-form-modal")
+          .classList.remove("hidden");
+      }
 
-                  function closeProductFormModal() {
-                    document.getElementById("product-form-modal").classList.add("hidden");
-                  }
+      function closeProductFormModal() {
+        document.getElementById("product-form-modal").classList.add("hidden");
+      }
 
-                  function saveProduct(e) {
-                    e.preventDefault();
-                    let products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    const id = document.getElementById("crud-id").value;
-                    const title = document.getElementById("crud-title").value;
-                    const category = document.getElementById("crud-category").value;
-                    const price = Number(document.getElementById("crud-price").value);
-                    const condition = document.getElementById("crud-condition").value;
-                    const size = document.getElementById("crud-size").value;
-                    const stock = Number(document.getElementById("crud-stock").value);
-                    const image = document.getElementById("crud-image").value;
-                    const description = document.getElementById("crud-desc").value;
+      function saveProduct(e) {
+        e.preventDefault();
+        let products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        const id = document.getElementById("crud-id").value;
+        const title = document.getElementById("crud-title").value;
+        const category = document.getElementById("crud-category").value;
+        const price = Number(document.getElementById("crud-price").value);
+        const condition = document.getElementById("crud-condition").value;
+        const size = document.getElementById("crud-size").value;
+        const stock = Number(document.getElementById("crud-stock").value);
+        const image = document.getElementById("crud-image").value;
+        const description = document.getElementById("crud-desc").value;
 
-                    if (id) {
-                      const index = products.findIndex((p) => p.id === Number(id));
-                      if (index !== -1) {
-                        products[index] = {
-                          id: Number(id),
-                          title,
-                          category,
-                          price,
-                          condition,
-                          size,
-                          stock,
-                          image,
-                          description,
-                        };
-                      }
-                    } else {
-                      const newProduct = {
-                        id: Date.now(),
-                        title,
-                        category,
-                        price,
-                        condition,
-                        size,
-                        stock,
-                        image,
-                        description,
-                      };
-                      products.unshift(newProduct);
-                    }
+        if (id) {
+          const index = products.findIndex((p) => p.id === Number(id));
+          if (index !== -1) {
+            products[index] = {
+              id: Number(id),
+              title,
+              category,
+              price,
+              condition,
+              size,
+              stock,
+              image,
+              description,
+            };
+          }
+        } else {
+          const newProduct = {
+            id: Date.now(),
+            title,
+            category,
+            price,
+            condition,
+            size,
+            stock,
+            image,
+            description,
+          };
+          products.unshift(newProduct);
+        }
 
-                    localStorage.setItem("rw_products", JSON.stringify(products));
-                    closeProductFormModal();
-                    renderAdminDashboard();
-                    alert("Produk berhasil disimpan!");
-                  }
+        localStorage.setItem("rw_products", JSON.stringify(products));
+        closeProductFormModal();
+        renderAdminDashboard();
+        alert("Produk berhasil disimpan!");
+      }
 
-                  function editProduct(id) {
-                    const products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    const prod = products.find((p) => p.id === id);
-                    if (!prod) return;
+      function editProduct(id) {
+        const products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        const prod = products.find((p) => p.id === id);
+        if (!prod) return;
 
-                    document.getElementById("crud-id").value = prod.id;
-                    document.getElementById("crud-title").value = prod.title;
-                    document.getElementById("crud-category").value = prod.category;
-                    document.getElementById("crud-price").value = prod.price;
-                    document.getElementById("crud-condition").value = prod.condition;
-                    document.getElementById("crud-size").value = prod.size;
-                    document.getElementById("crud-stock").value = prod.stock;
-                    document.getElementById("crud-image").value = prod.image;
-                    document.getElementById("crud-desc").value = prod.description;
+        document.getElementById("crud-id").value = prod.id;
+        document.getElementById("crud-title").value = prod.title;
+        document.getElementById("crud-category").value = prod.category;
+        document.getElementById("crud-price").value = prod.price;
+        document.getElementById("crud-condition").value = prod.condition;
+        document.getElementById("crud-size").value = prod.size;
+        document.getElementById("crud-stock").value = prod.stock;
+        document.getElementById("crud-image").value = prod.image;
+        document.getElementById("crud-desc").value = prod.description;
 
-                    document.getElementById("product-form-title").innerText = "Edit Produk";
-                    document
-                      .getElementById("product-form-modal")
-                      .classList.remove("hidden");
-                  }
+        document.getElementById("product-form-title").innerText = "Edit Produk";
+        document
+          .getElementById("product-form-modal")
+          .classList.remove("hidden");
+      }
 
-                  function deleteProduct(id) {
-                    if (!confirm("Yakin ingin menghapus produk ini?")) return;
-                    let products = JSON.parse(localStorage.getItem("rw_products")) || [];
-                    products = products.filter((p) => p.id !== id);
-                    localStorage.setItem("rw_products", JSON.stringify(products));
-                    renderAdminDashboard();
-                  }
+      function deleteProduct(id) {
+        if (!confirm("Yakin ingin menghapus produk ini?")) return;
+        let products = JSON.parse(localStorage.getItem("rw_products")) || [];
+        products = products.filter((p) => p.id !== id);
+        localStorage.setItem("rw_products", JSON.stringify(products));
+        renderAdminDashboard();
+      }
 
-                  function updateOrderStatus(orderId, newStatus) {
-                    let orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
-                    const o = orders.find((ord) => ord.id === orderId);
-                    if (o) {
-                      o.status = newStatus;
-                      localStorage.setItem("rw_orders", JSON.stringify(orders));
-                      renderAdminDashboard();
-                    }
-                  }
+      function updateOrderStatus(orderId, newStatus) {
+        let orders = JSON.parse(localStorage.getItem("rw_orders")) || [];
+        const o = orders.find((ord) => ord.id === orderId);
+        if (o) {
+          o.status = newStatus;
+          localStorage.setItem("rw_orders", JSON.stringify(orders));
+          renderAdminDashboard();
+        }
+      }
 
-                  function deleteUser(userId) {
-                    if (!confirm("Hapus pengguna ini?")) return;
-                    let users = JSON.parse(localStorage.getItem("rw_users")) || [];
-                    users = users.filter((u) => u.id !== userId);
-                    localStorage.setItem("rw_users", JSON.stringify(users));
-                    renderAdminDashboard();
-                  }
+      function deleteUser(userId) {
+        if (!confirm("Hapus pengguna ini?")) return;
+        let users = JSON.parse(localStorage.getItem("rw_users")) || [];
+        users = users.filter((u) => u.id !== userId);
+        localStorage.setItem("rw_users", JSON.stringify(users));
+        renderAdminDashboard();
+      }
 
-                  // ================= AUTH (LOGIN / REGISTER) =================
-                  function openAuthModal(mode) {
-                    authMode = mode;
-                    const modal = document.getElementById("auth-modal");
-                    const title = document.getElementById("auth-title");
-                    const nameField = document.getElementById("name-field-group");
-                    const submitBtn = document.getElementById("auth-submit-btn");
-                    const switchText = document.getElementById("auth-switch-text");
-                    const switchBtn = document.getElementById("auth-switch-btn");
+      // ================= AUTH (LOGIN / REGISTER) =================
+      function openAuthModal(mode) {
+        authMode = mode;
+        const modal = document.getElementById("auth-modal");
+        const title = document.getElementById("auth-title");
+        const nameField = document.getElementById("name-field-group");
+        const submitBtn = document.getElementById("auth-submit-btn");
+        const switchText = document.getElementById("auth-switch-text");
+        const switchBtn = document.getElementById("auth-switch-btn");
 
-                    if (mode === "register") {
-                      title.innerText = "Daftar Akun Baru";
-                      nameField.classList.remove("hidden");
-                      submitBtn.innerText = "Daftar";
-                      switchText.innerText = "Sudah punya akun?";
-                      switchBtn.innerText = "Masuk di sini";
-                    } else {
-                      title.innerText = "Masuk Akun";
-                      nameField.classList.add("hidden");
-                      submitBtn.innerText = "Masuk";
-                      switchText.innerText = "Belum punya akun?";
-                      switchBtn.innerText = "Daftar sekarang";
-                    }
-                    modal.classList.remove("hidden");
-                  }
+        if (mode === "register") {
+          title.innerText = "Daftar Akun Baru";
+          nameField.classList.remove("hidden");
+          submitBtn.innerText = "Daftar";
+          switchText.innerText = "Sudah punya akun?";
+          switchBtn.innerText = "Masuk di sini";
+        } else {
+          title.innerText = "Masuk Akun";
+          nameField.classList.add("hidden");
+          submitBtn.innerText = "Masuk";
+          switchText.innerText = "Belum punya akun?";
+          switchBtn.innerText = "Daftar sekarang";
+        }
+        modal.classList.remove("hidden");
+      }
 
-                  function closeAuthModal() {
-                    document.getElementById("auth-modal").classList.add("hidden");
-                    document.getElementById("auth-form").reset();
-                  }
+      function closeAuthModal() {
+        document.getElementById("auth-modal").classList.add("hidden");
+        document.getElementById("auth-form").reset();
+      }
 
-                  function switchAuthMode() {
-                    openAuthModal(authMode === "login" ? "register" : "login");
-                  }
+      function switchAuthMode() {
+        openAuthModal(authMode === "login" ? "register" : "login");
+      }
 
-                  function handleAuthSubmit(e) {
-                    e.preventDefault();
-                    const email = document.getElementById("auth-email").value.trim();
-                    const password = document.getElementById("auth-pass").value.trim();
-                    const users = JSON.parse(localStorage.getItem("rw_users")) || [];
+      function handleAuthSubmit(e) {
+        e.preventDefault();
+        const email = document.getElementById("auth-email").value.trim();
+        const password = document.getElementById("auth-pass").value.trim();
+        const users = JSON.parse(localStorage.getItem("rw_users")) || [];
 
-                    if (authMode === "register") {
-                      const name = document.getElementById("auth-name").value.trim();
-                      if (users.find((u) => u.email === email)) {
-                        alert("Email sudah terdaftar!");
-                        return;
-                      }
-                      const newUser = {
-                        id: Date.now(),
-                        name,
-                        email,
-                        password,
-                        role: "user",
-                        createdAt: new Date().toISOString(),
-                      };
-                      users.push(newUser);
-                      localStorage.setItem("rw_users", JSON.stringify(users));
-                      currentUser = newUser;
-                      localStorage.setItem("rw_currentUser", JSON.stringify(currentUser));
-                      alert("Pendaftaran berhasil!");
-                    } else {
-                      const found = users.find(
-                        (u) => u.email === email && u.password === password,
-                      );
-                      if (!found) {
-                        alert("Email atau password salah!");
-                        return;
-                      }
-                      currentUser = found;
-                      localStorage.setItem("rw_currentUser", JSON.stringify(currentUser));
-                    }
+        if (authMode === "register") {
+          const name = document.getElementById("auth-name").value.trim();
+          if (users.find((u) => u.email === email)) {
+            alert("Email sudah terdaftar!");
+            return;
+          }
+          const newUser = {
+            id: Date.now(),
+            name,
+            email,
+            password,
+            role: "user",
+            createdAt: new Date().toISOString(),
+          };
+          users.push(newUser);
+          localStorage.setItem("rw_users", JSON.stringify(users));
+          currentUser = newUser;
+          localStorage.setItem("rw_currentUser", JSON.stringify(currentUser));
+          alert("Pendaftaran berhasil!");
+        } else {
+          const found = users.find(
+            (u) => u.email === email && u.password === password,
+          );
+          if (!found) {
+            alert("Email atau password salah!");
+            return;
+          }
+          currentUser = found;
+          localStorage.setItem("rw_currentUser", JSON.stringify(currentUser));
+        }
 
-                    closeAuthModal();
-                    updateAuthUI();
-                    if (currentUser.role === "admin") {
-                      navigate("admin");
-                    }
-                  }
+        closeAuthModal();
+        updateAuthUI();
+        if (currentUser.role === "admin") {
+          navigate("admin");
+        }
+      }
 
-                  function logout() {
-                    currentUser = null;
-                    localStorage.removeItem("rw_currentUser");
-                    updateAuthUI();
-                    navigate("home");
-                  }
+      function logout() {
+        currentUser = null;
+        localStorage.removeItem("rw_currentUser");
+        updateAuthUI();
+        navigate("home");
+      }
 
-                  function updateAuthUI() {
-                    const authButtons = document.getElementById("auth-buttons");
-                    const userInfoBox = document.getElementById("user-info-box");
-                    const loggedUserName = document.getElementById("logged-user-name");
-                    const navUserMenu = document.getElementById("nav-user-menu");
-                    const navAdminBtn = document.getElementById("nav-admin-btn");
+      function updateAuthUI() {
+        const authButtons = document.getElementById("auth-buttons");
+        const userInfoBox = document.getElementById("user-info-box");
+        const loggedUserName = document.getElementById("logged-user-name");
+        const navUserMenu = document.getElementById("nav-user-menu");
+        const navAdminBtn = document.getElementById("nav-admin-btn");
 
-                    if (currentUser) {
-                      authButtons.classList.add("hidden");
-                      userInfoBox.classList.remove("hidden");
-                      userInfoBox.classList.add("flex");
-                      loggedUserName.innerText =
-                        currentUser.name.split(" ")[0] + ` (${currentUser.role})`;
+        if (currentUser) {
+          authButtons.classList.add("hidden");
+          userInfoBox.classList.remove("hidden");
+          userInfoBox.classList.add("flex");
+          loggedUserName.innerText =
+            currentUser.name.split(" ")[0] + ` (${currentUser.role})`;
 
-                      navUserMenu.classList.remove("hidden");
-                      if (currentUser.role === "admin") {
-                        navAdminBtn.classList.remove("hidden");
-                      } else {
-                        navAdminBtn.classList.add("hidden");
-                      }
-                    } else {
-                      authButtons.classList.remove("hidden");
-                      userInfoBox.classList.add("hidden");
-                      userInfoBox.classList.remove("flex");
-                      navUserMenu.classList.add("hidden");
-                      navAdminBtn.classList.add("hidden");
-                    }
-                  }
+          navUserMenu.classList.remove("hidden");
+          if (currentUser.role === "admin") {
+            navAdminBtn.classList.remove("hidden");
+          } else {
+            navAdminBtn.classList.add("hidden");
+          }
+        } else {
+          authButtons.classList.remove("hidden");
+          userInfoBox.classList.add("hidden");
+          userInfoBox.classList.remove("flex");
+          navUserMenu.classList.add("hidden");
+          navAdminBtn.classList.add("hidden");
+        }
+      }
 
-                  window.addEventListener("DOMContentLoaded", initApp);
+      window.addEventListener("DOMContentLoaded", initApp);
     </script>
   </body>
 </html>
