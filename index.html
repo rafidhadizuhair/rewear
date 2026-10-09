@@ -1301,7 +1301,8 @@
         try {
           const BACKEND_URL = "https://rewearbackend-v2th.vercel.app";
 
-          const response = await fetch(`${BACKEND_URL}/get-snap-token`, {
+          // PERBAIKAN: Ubah /get-snap-token menjadi /api/create-snap-token
+          const response = await fetch(`${BACKEND_URL}/api/create-snap-token`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
